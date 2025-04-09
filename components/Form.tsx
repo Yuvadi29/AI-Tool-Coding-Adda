@@ -17,7 +17,7 @@ const TranscriptForm = () => {
         })
 
         const data = await res.json();
-        if (res.ok) {
+        if (res.status == 200) {
             toast.success("AI content generated successfully!!")
         } else {
             toast.error(data.error || "Something went wrong")
@@ -34,7 +34,7 @@ const TranscriptForm = () => {
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
             />
-            <Button onClick={handleSubmit} disabled={loading}>
+            <Button onClick={handleSubmit} disabled={loading} className='cursor-pointer'>
                 {loading ? 'Generating...' : "Generate"}
             </Button>
 
