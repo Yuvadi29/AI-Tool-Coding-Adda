@@ -33,7 +33,7 @@ export async function runAITasks(transcript: string) {
 
     return  {
         chapters: chapterText,
-        shortIdeas: shorts,
+        shortsIdeas: shorts,
         titles,
         thumbnailPrompt: thumbnail,
         summary,

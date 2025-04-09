@@ -1,6 +1,7 @@
 import { detectLanguage } from "@/lib/detectLanguage";
 import { fetchTranscript } from "@/lib/fetchTranscript";
 import { runAITasks } from "@/lib/runAITasks";
+import { saveTODB } from "@/lib/saveContent";
 import { translateToEnglish } from "@/lib/translateToEnglish";
 import { NextResponse } from "next/server";
 
@@ -19,15 +20,21 @@ export async function POST(req: Request) {
 
         // Run AI tasks
         const aiOutput = await runAITasks(translatedTranscript);
+        const { chapters, shortsIdeas, titles, thumbnailPrompt, selectedTitle, summary } = aiOutput;
 
         // Save everything to DB
-        // await saveToDB({
-        //     url,
-        //     transcript,
-        //     translatedTranscript,
-        //     language,
-        //     ...aiOutput
-        // })
+        await saveTODB({
+            url,
+            transcript,
+            translatedTranscript,
+            language,
+            chapters,
+            shortsIdeas,
+            titles,
+            thumbnailPrompt,
+            selectedTitle,
+            summary
+        })
 
         return NextResponse.json({
             success: true,
