@@ -15,6 +15,6 @@ export async function translateToEnglish(hindiText:string): Promise<string> {
             temperature: 0.3
         }
     });
-    console.log(completion.text);
+    // console.log(completion.text);
     return completion.text ?? '';
 }
