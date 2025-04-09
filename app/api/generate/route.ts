@@ -1,3 +1,4 @@
+import { detectLanguage } from "@/lib/detectLanguage";
 import { fetchTranscript } from "@/lib/fetchTranscript";
 import { NextResponse } from "next/server";
 
