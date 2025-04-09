@@ -3,9 +3,10 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>
+    <main className='max-w-2xl mx-auto p-10'>
+      <h1 className="text-2xl font-bold mb-4">Coding Adda AI Tool</h1>
       <TranscriptForm />
-    </div>
+    </main>
   )
 }
 
