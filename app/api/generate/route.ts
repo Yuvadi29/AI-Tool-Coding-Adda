@@ -1,5 +1,6 @@
 import { detectLanguage } from "@/lib/detectLanguage";
 import { fetchTranscript } from "@/lib/fetchTranscript";
+import { translateToEnglish } from "@/lib/translateToEnglish";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
