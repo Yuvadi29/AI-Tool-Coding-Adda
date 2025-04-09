@@ -1,7 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
 
+const apiKey = process.env.API_KEY;
 const genAI = new GoogleGenAI({
-    apiKey: 'AIzaSyBLCxsijJCFR3L8sYkaQbmJC27gT68pYAQ',
+    apiKey: apiKey,
 });
 
 export async function translateToEnglish(hindiText:string): Promise<string> {
