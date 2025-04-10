@@ -7,7 +7,7 @@ interface PageProps {
 
 export default async function VideoDetails({ params }: PageProps) {
     const video = await prisma.videoContent.findUnique({
-        where: { id: await params?.id },
+        where: { id: params?.id },
     })
 
     if (!video) return <div className='p-10'>Video Not Found</div>
