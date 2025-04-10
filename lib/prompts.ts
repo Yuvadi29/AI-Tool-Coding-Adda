@@ -54,4 +54,25 @@ export const prompts = {
      3. 5 Bullet points
      Transcript:
      ${transcript}`,
+
+    customTitle: (transcript: string) => `
+     You are a YouTube content strategist.
+     
+     Your task is to generate a single, short, eye-catching, and relevant custom title based on this transcript of a YouTube video.
+     
+     The title should:
+     - Be under 12 words.
+     - Use strong hooks (e.g., "Must Watch", "Secret", "Top", "How to", etc.).
+     - Sound like something that would make people curious enough to click.
+     - Avoid generic or overly broad titles.
+     - Accurately represent the content in a creative way.
+     
+     Transcript:
+     """
+     ${transcript}
+     """
+     
+     Respond with just the title and nothing else.
+     `
+
 }

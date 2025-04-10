@@ -30,6 +30,7 @@ export async function runAITasks(transcript: string) {
     // Pick the first title to generate thumbnail concept
     const bestTitle = titles.split('\n')[0]?.replace(/^\d+\.\s*/, '') || 'Coding Adda Podcast';
     const thumbnail = await generate(prompts.thumbnail(transcript, bestTitle));
+    const customTitle = await generate(prompts.customTitle(transcript))
 
     return  {
         chapters: chapterText,
@@ -38,5 +39,6 @@ export async function runAITasks(transcript: string) {
         thumbnailPrompt: thumbnail,
         summary,
         selectedTitle: bestTitle,
+        customTitle,
     }
 }

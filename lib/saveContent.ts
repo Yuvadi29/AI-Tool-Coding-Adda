@@ -11,6 +11,7 @@ type SaveProps = {
     selectedTitle: string
     thumbnailPrompt: string
     summary: string
+    customTitle: string
 }
 
 export async function saveTODB({
@@ -23,7 +24,8 @@ export async function saveTODB({
     titles,
     selectedTitle,
     thumbnailPrompt,
-    summary
+    summary,
+    customTitle
 }: SaveProps) {
     await prisma.videoContent.create({
         data: {
@@ -37,6 +39,7 @@ export async function saveTODB({
             selectedTitle,
             thumbnailPrompt,
             summary,
+            customTitle
         },
     })
 }

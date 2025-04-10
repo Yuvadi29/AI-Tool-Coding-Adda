@@ -20,4 +20,5 @@ model VideoContent {
     thumbnailPrompt      String
     summary              String
     createdAt            DateTime @default(now())
+    customTitle          String
 }
