@@ -43,7 +43,7 @@ export default async function Dashboard() {
               className="group relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-blue-500/40 border border-white/10 transition-transform transform hover:scale-105 bg-white/5 backdrop-blur-lg"
             >
               {/* Thumbnail */}
-              <div className="relative w-full h-56">
+              <div className="relative w-full h-84">
                 <Image
                   src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
                   layout="fill"
