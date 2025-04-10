@@ -45,7 +45,7 @@ export async function GET(req: NextRequest) {
                     ...aiOutput
                 });
 
-                send({ message: "✅ All done!", done: true, ...aiOutput });
+                send({ message: "✅ All done! Checkout the Dashboard Now!!", done: true, ...aiOutput });
                 controller.close();
             } catch (err: any) {
                 send({ error: err.message || "Internal error" });

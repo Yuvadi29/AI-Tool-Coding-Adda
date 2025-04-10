@@ -14,14 +14,21 @@ export default async function VideoDetails({ params }: PageProps) {
 
     return (
         <main className='max-w-5xl mx-auto p-8'>
-            <h1 className="text-2xl font-bold mb-4">{video?.selectedTitle}</h1>
-            <a
-                href={video?.youtubeUrl}
-                target='_blank'
-                className='text-blue-500 underline'
-            >
-                Open on YouTube
-            </a>
+            <h1 className="text-2xl font-bold mb-4">{video?.customTitle}</h1>
+
+            <div className="flex justify-center items-center rounded">
+                <iframe
+                    width="600"
+                    height="350"
+                    src={video?.youtubeUrl?.replace('watch?v=', 'embed/')}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className='rounded-md shadow-md'
+                ></iframe>
+            </div>
+
 
             <section className='mt-6 space-y-6'>
                 <Block title='Summary' content={video?.summary} />

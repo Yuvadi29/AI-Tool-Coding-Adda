@@ -3,6 +3,7 @@ import { prisma } from '../../prisma/client';
 import Image from 'next/image';
 
 export default async function Dashboard() {
+
   const videos = await prisma.videoContent.findMany({
     orderBy: {
       createdAt: 'desc'
@@ -24,13 +25,14 @@ export default async function Dashboard() {
     return match ? match[1] : null;
   };
 
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white px-6 py-12">
       <h1 className="text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
         📼 Your AI-Enhanced YouTube Content
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 ">
         {videos.map((video) => {
           const videoId = getVideoId(video?.youtubeUrl);
 
